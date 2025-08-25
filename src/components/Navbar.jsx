@@ -120,33 +120,51 @@ const Navbar = () => {
           isMenuOpen ? "block" : "hidden"
         } absolute top-16 left-0 w-full bg-gray-900 text-white md:hidden p-6 space-y-4`}
       >
-        <ScrollLink
-          to="projects"
-          smooth={true}
-          duration={500}
+        <Link
+          to="/"
           className="cursor-pointer block px-4 py-2 rounded-full border border-transparent hover:border-white hover:bg-white/10 transition-all duration-300"
-          onClick={() => { handleNavClick("projects"); setIsMenuOpen(false); }}
+          onClick={() => {
+            setIsMenuOpen(false);
+            setTimeout(() => {
+              const sectionElement = document.getElementById("projects");
+              if (sectionElement) {
+                sectionElement.scrollIntoView({ behavior: "smooth" });
+              }
+            }, 500);
+          }}
         >
           Projects
-        </ScrollLink>
-        <ScrollLink
-          to="skills"
-          smooth={true}
-          duration={500}
+        </Link>
+        <Link
+          to="/"
           className="cursor-pointer block px-4 py-2 rounded-full border border-transparent hover:border-white hover:bg-white/10 transition-all duration-300"
-          onClick={() => { handleNavClick("skills"); setIsMenuOpen(false); }}
+          onClick={() => {
+            setIsMenuOpen(false);
+            setTimeout(() => {
+              const sectionElement = document.getElementById("skills");
+              if (sectionElement) {
+                sectionElement.scrollIntoView({ behavior: "smooth" });
+              }
+            }, 500);
+          }}
         >
           Skills
-        </ScrollLink>
-        <ScrollLink
-          to="contact"
-          smooth={true}
-          duration={500}
+        </Link>
+        <Link
+          to="/"
           className="cursor-pointer block px-4 py-2 rounded-full border border-transparent hover:border-white hover:bg-white/10 transition-all duration-300"
-          onClick={() => { handleNavClick("contact"); setIsMenuOpen(false); }}
+          onClick={() => {
+            setIsMenuOpen(false);
+            setTimeout(() => {
+              const sectionElement = document.getElementById("contact");
+              if (sectionElement) {
+                sectionElement.scrollIntoView({ behavior: "smooth" });
+              }
+            }, 500);
+          }}
         >
           Contact
-        </ScrollLink>
+        </Link>
         <Link
           to="/aboutMe"
           className="cursor-pointer block px-4 py-2 rounded-full border border-transparent hover:border-white hover:bg-white/10 transition-all duration-300"
