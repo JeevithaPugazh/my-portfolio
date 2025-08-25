@@ -9,5 +9,6 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     historyApiFallback: true // fixes React Router blank page on refresh
-  }
+  },
+  base: '/my-portfolio/'
 });
