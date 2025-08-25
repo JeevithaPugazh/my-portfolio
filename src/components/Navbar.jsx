@@ -125,7 +125,7 @@ const Navbar = () => {
           smooth={true}
           duration={500}
           className="cursor-pointer block px-4 py-2 rounded-full border border-transparent hover:border-white hover:bg-white/10 transition-all duration-300"
-          onClick={() => handleNavClick("projects")}
+          onClick={() => { handleNavClick("projects"); setIsMenuOpen(false); }}
         >
           Projects
         </ScrollLink>
@@ -134,7 +134,7 @@ const Navbar = () => {
           smooth={true}
           duration={500}
           className="cursor-pointer block px-4 py-2 rounded-full border border-transparent hover:border-white hover:bg-white/10 transition-all duration-300"
-          onClick={() => handleNavClick("skills")}
+          onClick={() => { handleNavClick("skills"); setIsMenuOpen(false); }}
         >
           Skills
         </ScrollLink>
@@ -143,30 +143,33 @@ const Navbar = () => {
           smooth={true}
           duration={500}
           className="cursor-pointer block px-4 py-2 rounded-full border border-transparent hover:border-white hover:bg-white/10 transition-all duration-300"
-          onClick={() => handleNavClick("contact")}
+          onClick={() => { handleNavClick("contact"); setIsMenuOpen(false); }}
         >
           Contact
         </ScrollLink>
         <Link
           to="/aboutMe"
           className="cursor-pointer block px-4 py-2 rounded-full border border-transparent hover:border-white hover:bg-white/10 transition-all duration-300"
+          onClick={() => setIsMenuOpen(false)}
         >
           About Me
         </Link>
         <a
-          href="https://github.com/yourusername"
+          href="https://github.com/JeevithaPugazh/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-4 py-2 rounded-full border border-transparent hover:border-white hover:bg-white/10 transition-all duration-300"
+          onClick={() => setIsMenuOpen(false)}
         >
           <FaGithub />
           GitHub
         </a>
         <a
-          href="/resume.pdf"
+          href="https://drive.google.com/file/d/1__jFwOAL7k_wWWLeupKC0iXD76iYU5Ze/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-4 py-2 rounded-full border border-transparent hover:border-white hover:bg-white/10 transition-all duration-300"
+          onClick={() => setIsMenuOpen(false)}
         >
           <HiOutlineDocumentText />
           Resume
