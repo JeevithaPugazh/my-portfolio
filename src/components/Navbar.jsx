@@ -6,29 +6,13 @@ import { HiOutlineDocumentText } from "react-icons/hi";
 import { GiHamburgerMenu } from "react-icons/gi"; // Import hamburger icon
 
 const Navbar = () => {
-  const [prevScrollPos, setPrevScrollPos] = useState(
-    window.scrollY
-  );
-  const [visible, setVisible] = useState(true);
+  // Remove scroll/hide logic for sticky navbar
   // State for hamburger menu
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
   const location = useLocation();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-      const isScrollingUp =
-        prevScrollPos > currentScrollPos;
-
-      setVisible(isScrollingUp || currentScrollPos < 50);
-      setPrevScrollPos(currentScrollPos);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () =>
-      window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollPos]);
+  // No scroll effect needed for sticky navbar
 
   const handleNavClick = (section) => {
     navigate("/");
@@ -42,9 +26,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`z-20 p-4 bg-gray-900 text-white flex justify-between items-center fixed w-full transition-transform duration-300 ${
-        visible ? "translate-y-0" : "-translate-y-full"
-      }`}
+      className="z-20 p-4 bg-gray-900 text-white flex justify-between items-center fixed w-full top-0 left-0 transition-shadow duration-300 shadow-lg"
     >
       {/* Logo or Title */}
       <div className="text-xl font-bold">
@@ -95,15 +77,7 @@ const Navbar = () => {
           <FaGithub />
           GitHub
         </a>
-        <a
-          href="https://drive.google.com/file/d/1__jFwOAL7k_wWWLeupKC0iXD76iYU5Ze/view?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 px-4 py-2 rounded-full border border-transparent hover:border-white hover:bg-white/10 transition-all duration-300"
-        >
-          <HiOutlineDocumentText />
-          Resume
-        </a>
+        
       </div>
 
       {/* Hamburger Icon */}
@@ -182,16 +156,7 @@ const Navbar = () => {
           <FaGithub />
           GitHub
         </a>
-        <a
-          href="https://drive.google.com/file/d/1__jFwOAL7k_wWWLeupKC0iXD76iYU5Ze/view?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 px-4 py-2 rounded-full border border-transparent hover:border-white hover:bg-white/10 transition-all duration-300"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          <HiOutlineDocumentText />
-          Resume
-        </a>
+        
       </div>
     </nav>
   );

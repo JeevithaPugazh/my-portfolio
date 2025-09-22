@@ -61,15 +61,15 @@ const AboutMe = () => {
         <div className="flex flex-col md:flex-row items-start justify-center gap-12">
           {/* Profile Picture - Now Fixed */}
           <motion.div
-            className="w-48 h-48 flex-shrink-0 "
+            className="w-56 h-56 flex-shrink-0 "
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1 }}
           >
             <img
-              src="/images/profilePic.png"
+              src="./images/profilePic (2).png"
               alt="Jeevitha Pugazhendi"
-              className="w-full h-full rounded-full shadow-lg border-4 border-gray-300"
+              className="w-90 h-90 rounded-full object-cover shadow-lg mx-auto border-4 border-gray-300"
             />
           </motion.div>
 
@@ -101,7 +101,7 @@ const AboutMe = () => {
                     
                   I'm <span className="font-semibold">Jeevitha Pugazhendi</span> 👩‍💻, a <span className="font-semibold">Full-Stack Developer with a front-end focus,</span> passionate about crafting seamless digital experiences. With expertise in the <span className="font-semibold">MERN stack (MongoDB, Express.js, React, Node.js),</span> I build dynamic, user-friendly applications that balance aesthetics and functionality.<br></br>
 
-I honed my development skills at <span className="font-semibold">Per Scholas</span> 🚀, gaining hands-on experience in modern web technologies and best practices. My background in <span className="font-semibold">UI/UX design</span> enhances my ability to create intuitive and engaging user experiences.
+My background in <span className="font-semibold">UI/UX design</span> enhances my ability to create intuitive and engaging user experiences.
 
 Always eager to innovate, I love <span className="font-semibold">exploring new front-end trends, optimizing performance, and integrating smooth animations.</span> Let's build something amazing together! 🚀🎨
                   </Typography>

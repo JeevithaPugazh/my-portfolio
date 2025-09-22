@@ -14,7 +14,17 @@ import Footer from "./components/Footer";
 import Project1 from "./pages/Project1";
 import Project2 from "./pages/Project2";
 import Project3 from "./pages/Project3";
-import ProjectDetail from "./pages/ProjectDetail";
+
+import { useParams } from "react-router-dom";
+// Dynamic project router
+function ProjectRouter() {
+  const { id } = useParams();
+  if (id === '1') return <Project1 />;
+  if (id === '2') return <Project2 />;
+  if (id === '3') return <Project3 />;
+  return <div className="text-center text-red-500 py-20">Project not found.</div>;
+}
+// import ProjectDetail from "./pages/ProjectDetail";
 import AboutMe from "./pages/AboutMe";
 
 function App() {
@@ -38,7 +48,8 @@ function App() {
   <Route path="/project2" element={<Project2 />} />
   <Route path="/project3" element={<Project3 />} />
   <Route path="/aboutMe" element={<AboutMe />} />
-  <Route path="/projects/:id" element={<ProjectDetail />} />
+  <Route path="/projects/:id" element={<ProjectRouter />} />
+  {/* <Route path="/projects/:id" element={<ProjectDetail />} /> */}
       </Routes>
     </Router>
   );
