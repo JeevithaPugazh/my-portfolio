@@ -1,14 +1,17 @@
-
-
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import tailwindcss from '@tailwindcss/vite'
+import tailwindcss from '@tailwindcss/vite';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  server: {
-    historyApiFallback: true // fixes React Router blank page on refresh
-  },
-  base: '/my-portfolio/'
+  plugins: [
+    react(),
+    tailwindcss(),
+    viteStaticCopy({
+      targets: [
+        { src: 'dist/index.html', dest: '.', rename: '404.html' }
+      ]
+    })
+  ],
+  base: '/my-portfolio/',
 });
